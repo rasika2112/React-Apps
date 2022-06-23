@@ -1,15 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './Components/Header';
-import Content from './Components/Content';
+import { Header, Content } from './components';
 
-function App() {
-  return (
+const App = () => (
     <div className="App">
       <Header />
       <Content />
     </div>
-  );
-}
+);
 
 export default App;
