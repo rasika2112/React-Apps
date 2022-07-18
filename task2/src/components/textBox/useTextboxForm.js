@@ -6,20 +6,26 @@ const useTextboxForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log("Context: ", props.listItems);
-        if (input !== '' ) {
-            if (props.listItems.some((element) => element === input)) {
-                console.log("Duplicated Item");
-            }else {
-                props.onSubmit(input);
-            }
-            
+        const duplicate = props.listItems.some((element) => element.value.toLowerCase() === input.toLowerCase()) || (props.editItem!==null && props.listItems.some((element) => element.value.toLowerCase() === props.editItem.value.toLowerCase()))
+
+        if (input!=='' && duplicate===false ) {
+            console.log(props.listItems.some((element) => element.value.toLowerCase() === input.toLowerCase()));
+            props.onSubmit(input);
+        }else if (props.editItem && duplicate===false) {
+                console.log(props.editItem);
+                props.onEdit();
         }
         
         setInput("");
     };
 
-    const handleChange = (e) => setInput(e.target.value);
+    const handleChange = (e) => {
+        if (props.editItem === null) {
+            setInput(e.target.value)
+        }else {
+            props.setEditItem({...props.editItem, value: e.target.value})
+        }
+    };
 
     return { input, handleSubmit, handleChange };
 }

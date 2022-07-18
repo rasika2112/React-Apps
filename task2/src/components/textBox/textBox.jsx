@@ -12,7 +12,7 @@ const TextBox = (props) => {
         <FormControl
           as="textarea"
           id="TextArea"
-          value={input}
+          value={props.editItem === null ? input : props.editItem.value}
           onChange={handleChange}
         />
         <Button type="submit" variant="success">

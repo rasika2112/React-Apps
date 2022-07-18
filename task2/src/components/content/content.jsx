@@ -7,7 +7,15 @@ import { TextBox } from "../textBox";
 import useList from "./useList";
 
 const Content = () => {
-  const { listItems, deleteItem, handleSubmit } = useList();
+  const {
+    listItems,
+    deleteItem,
+    handleSubmit,
+    edit,
+    handleEdit,
+    editItem,
+    setEditItem,
+  } = useList();
 
   useEffect(() => {
     console.log("New List:", listItems);
@@ -15,8 +23,14 @@ const Content = () => {
 
   return (
     <>
-      <TextBox onSubmit={handleSubmit} listItems={listItems} />
-      <DisplayList list={listItems} deleteItem={deleteItem} />
+      <TextBox
+        onSubmit={handleSubmit}
+        onEdit={handleEdit}
+        listItems={listItems}
+        editItem={editItem}
+        setEditItem={setEditItem}
+      />
+      <DisplayList list={listItems} deleteItem={deleteItem} edit={edit} />
     </>
   );
 };
