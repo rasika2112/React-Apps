@@ -1,3 +1,7 @@
+# Project 1
+
+This project is the first in line of me starting to learning ReactJS. Data is fetched from an API using axios library. Then the data is displayed in Table, and a particular selected row's details are displayed in the card. The whole working is using functional components and React Hooks.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

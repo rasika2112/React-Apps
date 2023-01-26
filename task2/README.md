@@ -1,3 +1,7 @@
+# Project 2
+
+This is the project that every coder does, a TODO app!! In this, you can add an item, edit item and delete it. It also doesn't allow dusplicate items to be added.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
